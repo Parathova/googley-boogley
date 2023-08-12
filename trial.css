@@ -23,13 +23,13 @@ body {
   }
   
   .base-timer__path-elapsed {
-    stroke-width: 7px;
-    stroke: grey;
+    stroke-width: 2px;
+    stroke: rgb(110, 137, 255);
   }
   
   .base-timer__path-remaining {
-    stroke-width: 7px;
-    stroke-linecap: round;
+    stroke-width: 4px;
+    /*stroke-linecap: round;*/
     transform: rotate(90deg);
     transform-origin: center;
     transition: 1s linear all;
@@ -38,7 +38,7 @@ body {
   }
   
   .base-timer__path-remaining.arc {
-    color: rgba(179, 48, 102, 0.973)
+    color: rgba(0, 35, 192, 0.973)
   }
   
   .base-timer__label {

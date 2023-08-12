@@ -11,7 +11,7 @@ let timer = document.querySelector("#base-timer-path-remaining");
 let timeLabel = document.getElementById("base-timer-label");
 
 //Time related vars
-const TIME_LIMIT = 30; //in seconds
+const TIME_LIMIT = 10; //in seconds
 let timePassed = -1;
 let timeLeft = TIME_LIMIT;
 let timerInterval = null;
@@ -52,10 +52,16 @@ function startTimer() {
   }, 1000);
 }
 
+
+
 window.addEventListener("load", () => {
   timeLabel.innerHTML = formatTime(TIME_LIMIT);
+  //timeLabel.innerHTML = formatTime(TIME_LIMIT*0.5);
   setDisabled(stopBtn);
 });
+
+
+
 
 //---------------------------------------------
 //HELPER METHODS
