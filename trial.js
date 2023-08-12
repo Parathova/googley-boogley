@@ -5,15 +5,19 @@ const RESET_DASH_ARRAY = `-57 ${FULL_DASH_ARRAY}`;
 let startBtn = document.querySelector(".start");
 let stopBtn = document.querySelector(".stop");
 let resetBtn = document.querySelector(".reset");
+let focusBtn = document.querySelector(".focus"); // new 
+let restBtn = document.querySelector(".rest"); //new 
 
 //DOM elements
 let timer = document.querySelector("#base-timer-path-remaining");
 let timeLabel = document.getElementById("base-timer-label");
 
 //Time related vars
-const TIME_LIMIT = 10; //in seconds
+const TIME_LIMIT_FOCUS = 1500; //in seconds
+const TIME_LIMIT_REST = 300;
 let timePassed = -1;
-let timeLeft = TIME_LIMIT;
+let timeLeftFocus = TIME_LIMIT_FOCUS;
+let timeLeftRest = TIME_LIMIT_REST;
 let timerInterval = null;
 
 function reset() {
@@ -21,6 +25,18 @@ function reset() {
   resetVars();
   startBtn.innerHTML = "Start";
   timer.setAttribute("stroke-dasharray", RESET_DASH_ARRAY);
+}
+
+function focus(withReset = false) {
+  if (withReset) {
+    resetVars();
+  }
+  setTimerFocus();
+}
+
+function setTimerFocus() {
+    timeLabel.innerHTML = formatTime(timeLeftFocus);
+    setCircleDasharray(); 
 }
 
 function start(withReset = false) {
