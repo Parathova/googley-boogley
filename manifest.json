@@ -1,0 +1,10 @@
+{ 
+    "name": "Googely Boogely Healthy Study Buddy",
+    "version": "1.0.0",
+    "descripton": "This is an extension to help remind users to take mental health breaks and other healthy stuff",
+    "manifest_version": 3,
+    "authors": "Parathova, Wuzy, MicrophoneAle, Jaden Zhang",
+    "action": {
+        //"default_popup": 
+    }
+}
