@@ -1,14 +1,20 @@
 document.addEventListener('DOMContentLoaded', function() {
-    const playButton = document.getElementById('playButton');
+    const playImage = document.getElementById('playImage');
+    const pauseImage = document.getElementById('pauseImage');
     const audioPlayer = document.getElementById('audioPlayer');
 
-    playButton.addEventListener('click', function() {
-        if (audioPlayer.paused) {
-            audioPlayer.play();
-            playButton.textContent = 'Pause';
-        } else {
-            audioPlayer.pause();
-            playButton.textContent = 'Play';
-        }
+    playImage.addEventListener('click', function() {
+    
+        audioPlayer.play();
+        playImage.style.display = 'none';   // Hide play image
+        pauseImage.style.display = 'block'; // Show pause image
+        
+    });
+
+    pauseImage.addEventListener('click', function() {
+        audioPlayer.pause();
+        playImage.style.display = 'block';  // Show play image
+        pauseImage.style.display = 'none';  // Hide pause image
+        
     });
 });
