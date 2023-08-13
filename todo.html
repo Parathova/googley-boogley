@@ -2,15 +2,43 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv= "X-UA-Compatable" content = "IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Your Healthy To-Do List</title>
     <link rel="stylesheet" href= "todostyle.css">
 </head>
 <body>
-    <div class="container">
-
-     <div class="todo-app"></div>
-        <h2> To-Do List<img src="todoAssets/toDoListIcon3.png"></h2>
-    </div>
+    <header>
+        <h1>Task List</h1>
+        <form id = "new-task-form">
+            <input
+                type = "text"
+                id = "new-task-input"
+                placeholder = "What do you have planned?" />
+            <input type = "submit" 
+                id = "new-task-submit"
+                value = "Add Task">
+        </form>
+    </header>
+    <main>
+        <section class = "task-list">
+            <h2>Tasks</h2>
+            <div id = "tasks">
+                <div class = "tasks">
+                    <div class = "content">
+                        <input
+                            type = "text"
+                            class = "text"
+                            value = "my shiny task (copied)"
+                        />
+                    </div>
+                    <div class = "actions">
+                        <button class = "edit">Edit</button>
+                        <button class = "delete">Delete</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
 </body>
 </html>
