@@ -1,10 +1,11 @@
+
 .uwuduck > *{
     animation: fly 5s linear 1;
-    top: 0;
+    /*top: 1000;
     left:0;
     position: fixed;
     z-index: 999;
-    pointer-events: none;
+    pointer-events: none;*/
 }
 
 @keyframes fly {
