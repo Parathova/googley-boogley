@@ -4,16 +4,20 @@
     "descripton": "This is an extension to help remind users to take mental health breaks and other healthy stuff",
     "manifest_version": 3,
     "authors": "Parathova, Wuzy, MicrophoneAle, Jaden Zhang",
-    "action": {
-        //"default_popup": 
-    }
+
     "background": {
         "service worker": "background.js"
     },
+
+    "icons":{
+        "32": "ExtensionIcon.png"
+    },
+
     "action": {
-        "default_icon": {
-            "32": "insertMICHAELSICON.png",
-        }
-    }
-    "permissions": ["activeTab"],
+        "default_icon" : "ExtensionIcon.png",
+        "default_popup": "popup.html",
+        "default_title": "le_app"
+    },
+    
+    "permissions": ["activeTab"]
 }
