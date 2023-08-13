@@ -14,7 +14,7 @@ let timeLabel = document.getElementById("base-timer-label");
 
 //Time related vars
 const TIME_LIMIT_FOCUS = 1500; //in seconds
-const TIME_LIMIT_REST = 300;
+const TIME_LIMIT_REST = 10;
 let timePassed = -1;
 let timeLeftFocus = TIME_LIMIT_FOCUS;
 let timeLeftRest = TIME_LIMIT_REST;
@@ -24,22 +24,26 @@ let withRest = false;
 
 function reset() {
   clearInterval(timerInterval);
-  resetVars();
+  if (withFocus == true ) {
+   resetVarsFocus();
+  } else {
+    resetVarsRest();
+  }
   startBtn.innerHTML = "Start";
   timer.setAttribute("stroke-dasharray", RESET_DASH_ARRAY);
-  if (withFocus = true) {
+  if (withFocus == true) {
     timeLabel.innerHTML = formatTime(TIME_LIMIT_FOCUS);
     focus();
-  } else if (withRest  = true) {
+  } else if (withRest  == true) {
     timeLabel.innerHTML = formatTime(TIME_LIMIT_REST);
+    rest();
   }
-  withFocus= false;
-  withRest = false;
+  
 }
 
 function focus(withReset = false) {
   if (withReset) {
-    resetVars();
+    resetVarsFocus();
   }
   setDisabled(focusBtn); //this isn't being executed for some reason 
   removeDisabled(restBtn);
@@ -49,7 +53,7 @@ function focus(withReset = false) {
 
 function setTimerFocus() {
   timeLabel.innerHTML = formatTime(TIME_LIMIT_FOCUS);
-  setCircleDasharray(); 
+  setCircleDasharray(TIME_LIMIT_FOCUS); 
   withFocus=true;
   withRest=false;
   
@@ -57,7 +61,7 @@ function setTimerFocus() {
 
 function rest(withReset = false) {
   if (withReset) {
-    resetVars();
+    resetVarsRest();
   }
   setDisabled(restBtn);
   removeDisabled(focusBtn);
@@ -66,7 +70,7 @@ function rest(withReset = false) {
 
 function setTimerRest(withReset = false) {
   if (withReset) {
-    resetVars();
+    resetVarsRest();
   }
   withRest=true;
   withFocus=false;
@@ -78,9 +82,14 @@ function start(withReset = false ) { // start is false withReset
   setDisabled(startBtn);
   removeDisabled(stopBtn);
   if (withReset) {
-    resetVars();
+    if (withFocus == true) {
+    resetVarsFocus();
+    } else {
+      resetVarsRest();
+    }
   }
    if (withRest == true) { //its always true for some reason NOW YOU WORK  
+    console.log("fuck");
     startTimerRest();
     console.log("ARE YOU BEING FUCKING CALLED withRest = TrUE ");
   } else {
@@ -93,7 +102,7 @@ function startTimerFocus() {
     timePassed = timePassed += 1;
     timeLeft = TIME_LIMIT_FOCUS - timePassed;
     timeLabel.innerHTML = formatTime(timeLeft);
-    setCircleDasharray();
+    setCircleDasharray(TIME_LIMIT_FOCUS);
 
     if (timeLeft === 0) { //update this legit never happens now what the fuck
       timeIsUp();
@@ -105,8 +114,8 @@ function startTimerRest() {
   timerInterval = setInterval(() => {
     timePassed = timePassed += 1;
     timeLeft = TIME_LIMIT_REST - timePassed;
-    timeLabel.innerHTML = formatTime(timeLeft);
-    setCircleDasharray();
+    timeLabel.innerHTML = formatTime(timeLeft); // this IS SUPPOSED PRINT 
+    setCircleDasharray(TIME_LIMIT_REST);
 
     if (timeLeft === 0) {
       timeIsUp();
@@ -149,7 +158,7 @@ function stop() {
 
 window.addEventListener("load", () => {
   focus();
-  timeLabel.innerHTML = formatTime(TIME_LIMIT);
+  //timeLabel.innerHTML = formatTime(TIME_LIMIT);
   //timeLabel.innerHTML = formatTime(TIME_LIMIT*0.5);
   setDisabled(stopBtn);
 
@@ -179,13 +188,22 @@ function timeIsUp() {
   }
 }
 
-function resetVars() {
+function resetVarsFocus() {
   removeDisabled(startBtn);
   setDisabled(stopBtn);
   timePassed = -1;
-  timeLeft = TIME_LIMIT;
+  timeLeft = TIME_LIMIT_FOCUS;
   console.log(timePassed, timeLeft);
-  timeLabel.innerHTML = formatTime(TIME_LIMIT);
+  timeLabel.innerHTML = formatTime(TIME_LIMIT_FOCUS);
+}
+
+function resetVarsRest(TIME_LIMIT) {
+  removeDisabled(startBtn);
+  setDisabled(stopBtn);
+  timePassed = -1;
+  timeLeft = TIME_LIMIT_REST;
+  console.log(timePassed, timeLeft);
+  timeLabel.innerHTML = formatTime(TIME_LIMIT_REST);
 }
 
 function formatTime(time) {
@@ -199,14 +217,19 @@ function formatTime(time) {
   return `${minutes}:${seconds}`;
 }
 
-function calculateTimeFraction() {
-  const rawTimeFraction = timeLeft / TIME_LIMIT;
+function calculateTimeFraction(TIME_LIMIT) {
+  let rawTimeFraction = 0.0;
+ if (TIME_LIMIT == TIME_LIMIT_FOCUS) {
+  rawTimeFraction = timeLeftFocus / TIME_LIMIT;
+ } else {
+  rawTimeFraction = timeLeftRest / TIME_LIMIT;
+ }
   return rawTimeFraction - (1 / TIME_LIMIT) * (1 - rawTimeFraction);
 }
 
-function setCircleDasharray() {
+function setCircleDasharray(TIME_LIMIT) {
   const circleDasharray = `${(
-    calculateTimeFraction() * FULL_DASH_ARRAY
+    calculateTimeFraction(TIME_LIMIT) * FULL_DASH_ARRAY
   ).toFixed(0)} 283`;
   console.log("setCircleDashArray: ", circleDasharray);
   timer.setAttribute("stroke-dasharray", circleDasharray);
