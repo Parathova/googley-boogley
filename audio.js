@@ -2,6 +2,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const playImage = document.getElementById('playImage');
     const pauseImage = document.getElementById('pauseImage');
     const audioPlayer = document.getElementById('audioPlayer');
+    audioPlayer.volume = 0.1;
 
     playImage.addEventListener('click', function() {
     
