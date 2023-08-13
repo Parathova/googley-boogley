@@ -6,8 +6,7 @@
     "author": "Parathova, Wuzy, MicrophoneAle, Jaden Zhang",
 
     "background": {
-        "scripts": "background.js",
-        "persistent": false
+        "service_worker": "background.js"
     },
 
     "icons":{
