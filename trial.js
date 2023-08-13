@@ -13,13 +13,31 @@ let timer = document.querySelector("#base-timer-path-remaining");
 let timeLabel = document.getElementById("base-timer-label");
 
 //Time related vars
-const TIME_LIMIT_FOCUS = 1500; //in seconds
-const TIME_LIMIT_REST = 10;
+let TIME_LIMIT_FOCUS = 1500; //in seconds
+let TIME_LIMIT_REST = 300;
 let timePassed = -1;
 let timeLeft = 0.0;
 let timerInterval = null;
-let withFocus= false;
+let withFocus = false;
 let withRest = false;
+
+function add() {
+  if (withFocus == true) {
+    TIME_LIMIT_FOCUS = TIME_LIMIT_FOCUS + 300;
+  } else if (withRest == true) {
+    TIME_LIMIT_REST = TIME_LIMIT_REST + 300;
+  }
+}
+
+function subtract() {
+  if (withFocus == true && timeLeft >= 0) {
+    TIME_LIMIT_FOCUS = TIME_LIMIT_FOCUS - 300;
+  } else if (withRest == true && timeLeft >= 0) {
+    TIME_LIMIT_REST = TIME_LIMIT_REST - 300;
+  } else if (TIME_LIMIT_FOCUS < 0 || TIME_LIMIT_REST < 0 ) {
+    timeIsNegative();
+  }
+}
 
 function reset() {
   clearInterval(timerInterval);
@@ -65,9 +83,10 @@ function rest(withReset = false) {
 function setTimerFocus() {
   timeLabel.innerHTML = formatTime(TIME_LIMIT_FOCUS);
   setCircleDasharray(TIME_LIMIT_FOCUS); 
-  withFocus=true;
-  withRest=false;
   
+  withRest=false;
+  withFocus=true;
+  console.log(withRest);
 }
 
 
@@ -191,6 +210,18 @@ function timeIsUp() {
     
   }
 }
+
+function timeIsNegative() {
+  setDisabled(startBtn);
+  removeDisabled(stopBtn);
+  clearInterval(timerInterval);
+  let confirmReset = confirm("Your Timer would be negative! Reset?");
+  if (confirmReset) {
+    reset();
+    
+  }
+}
+
 
 function resetVarsFocus() {
   removeDisabled(startBtn);
