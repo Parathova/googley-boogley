@@ -1,0 +1,20 @@
+.uwuduck > *{
+    animation: fly 5s linear 1;
+    top: 0;
+    left:0;
+    position: fixed;
+    z-index: 999;
+    pointer-events: none;
+}
+
+@keyframes fly {
+    0% {
+        transform: translate(0, 110vh);opacity: .50;
+    }
+    50% {
+        transform: translate(110vw,0);opacity: 1;
+    }
+    100% {
+        transform: translate(0, 110vh);opacity: .50;
+    }
+}

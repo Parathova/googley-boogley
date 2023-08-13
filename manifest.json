@@ -10,4 +10,10 @@
     "background": {
         "service worker": "background.js"
     },
+    "action": {
+        "default_icon": {
+            "32": "insertMICHAELSICON.png",
+        }
+    }
+    "permissions": ["activeTab"],
 }
