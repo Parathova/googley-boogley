@@ -20,26 +20,31 @@ document.addEventListener('DOMContentLoaded', function() {
     let i = 0;
     let start = false;
     function nextSong(play=true){
+
         audioPlayer.src = "Assets/Tracks/" + playlist[i];
         if(play) audioPlayer.play();
-        currentFileDisplay.textContent = `Playing: ${playlist[i]}`;
-        if(play) {
-            i = (i+1) % playlist.length;
-            console.log("nextsong");
-        }
+        let a = 9 + playlist[i].length;
+        currentFileDisplay.textContent = `Playing: ${playlist[i]}`.substring(0, a-4);
+        
+        i = (i+1) % playlist.length;
+        console.log("nextsong");
+        
     }
 
 
-    audioPlayer.volume = 0.2;
-    audioPlayer.addEventListener('ended', nextSong(true));
+    audioPlayer.volume = 0.18;
+    
     playImage.addEventListener('click', function() {
-        if(!start){
-            //nextSong(true);
-            start = true;
-        }
+       
         audioPlayer.play();
         playImage.style.display = 'none';   // Hide play image
         pauseImage.style.display = 'block'; // Show pause image
+        if(!start){
+            start = true;
+            audioPlayer.addEventListener('ended', () => nextSong(true));
+            console.log("event added");
+        }
+        
         
     });
 
@@ -50,6 +55,10 @@ document.addEventListener('DOMContentLoaded', function() {
         
     });
 
-
+    console.log("end");
     nextSong(false);
+    console.log("end");
+    
+
+    
 });

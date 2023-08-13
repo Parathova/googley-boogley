@@ -1,3 +1,8 @@
+@font-face {
+    font-family: Akshar;
+    src: url(Assets/Fonts/Akshar-Medium.ttf) format("ttf");
+}
+
 main{
     width: 600px;
     height: 900px;
@@ -43,7 +48,7 @@ img
 .audioUI
 {
     display: flex;
-  justify-content: center;
+  justify-content: center left;
   align-items: center;
   padding: 0px;
   margin: 0px;
@@ -53,7 +58,7 @@ img
 {
     color: blueviolet;
     font-size: x-large;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-family: 'Akshar';
     margin: 0px;
     flex-shrink: 1;
 }
