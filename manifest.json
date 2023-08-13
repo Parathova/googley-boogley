@@ -7,17 +7,17 @@
 
     "background": {
         "service_worker": "background.js"
-      },
-
-    "icons":{
-        "32": "Assets/ExtensionIcon.png"
     },
 
+    "icons":{
+        "32": "ExtensionIcon.png"
+    },
 
-    "browser_action": {
-        "default_popup": "window.html",
-        "default_icon": "Assets/ExtensionIcon.png"
-        
+    "action": {
+        "default_icon" : "ExtensionIcon.png",
+        "default_popup": "popup.html",
+        "web_accessible_resources": ["uwuduck.png"],
+        "default_title": "le_app"
     },
     
     "permissions": ["activeTab"]
