@@ -29,6 +29,7 @@ function reset() {
   timer.setAttribute("stroke-dasharray", RESET_DASH_ARRAY);
   if (withFocus = true) {
     timeLabel.innerHTML = formatTime(TIME_LIMIT_FOCUS);
+    focus();
   } else if (withRest  = true) {
     timeLabel.innerHTML = formatTime(TIME_LIMIT_REST);
   }
@@ -147,9 +148,11 @@ function stop() {
 
 
 window.addEventListener("load", () => {
+  focus();
   timeLabel.innerHTML = formatTime(TIME_LIMIT);
   //timeLabel.innerHTML = formatTime(TIME_LIMIT*0.5);
   setDisabled(stopBtn);
+
 });
 
 
