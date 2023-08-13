@@ -24,7 +24,7 @@ body {
   
   .base-timer__path-elapsed {
     stroke-width: 2px;
-    stroke: rgb(110, 137, 255);
+    stroke: rgb(96, 89, 142);
   }
   
   .base-timer__path-remaining {
@@ -38,7 +38,7 @@ body {
   }
   
   .base-timer__path-remaining.arc {
-    color: rgba(0, 35, 192, 0.973)
+    color: rgba(80, 56, 97)
   }
   
   .base-timer__label {
@@ -63,7 +63,8 @@ body {
   .buttons button {
     margin: 1rem;
     border: none;
-    background-color: beige;
+    background-color: rgb(186, 178, 249);
+    color: rgb(255, 255, 255);
     width: 100px;
     height: 50px;
     border-radius: 5px;
@@ -72,13 +73,13 @@ body {
   }
   
   .buttons button:hover {
-    background-color: rgba(179, 48, 102, 0.973);
-    color: white;
+    background-color: rgb(205, 139, 192);
+    color: rgb(243, 235, 247);
   }
   
   .buttons button:disabled {
     cursor: not-allowed;
   }
   .buttons button:disabled:hover{
-    background-color:beige;
+    background-color:rgb(215, 188, 236);
   }
