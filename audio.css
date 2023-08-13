@@ -57,6 +57,13 @@ img
   gap: 10px;
 }
 
+.titleDisplay
+{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
 #currentFile
 {
     color: blueviolet;
@@ -74,7 +81,7 @@ img
     font-family: "Akshar", Arial, Helvetica, sans-serif;
     margin-top: 0px;
     padding: 0px;
-    text-align: center;
+    /*text-align: center;*/
     font-stretch: extra-expanded;
     
 }
