@@ -1,12 +1,16 @@
-<html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <link rel="stylesheet" href="audio.css">
-    </head>
-    <body>
-        <script src="popup.js"></script>
-    </body>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Audio Player Thing</title>
+    <link rel="stylesheet" type="text/css" href="audio.css">
+</head>
+<body>
+    <button id="playButton">Play</button>
 
-
+    <audio id="audioPlayer" loop>
+        <source src="Assets/Lost-and-Found.mp3" type="audio/mpeg">
+        playing audio 
+    </audio>
+    <script src="audio.js"></script>
+</body>
 </html>
