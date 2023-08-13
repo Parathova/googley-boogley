@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     let i = 0;
     let start = false;
-    function nextSong(play = true){
+    function nextSong(play=true){
         audioPlayer.src = "Assets/Tracks/" + playlist[i];
         if(play) audioPlayer.play();
         currentFileDisplay.textContent = `Playing: ${playlist[i]}`;
@@ -34,7 +34,7 @@ document.addEventListener('DOMContentLoaded', function() {
     audioPlayer.addEventListener('ended', nextSong(true));
     playImage.addEventListener('click', function() {
         if(!start){
-            nextSong();
+            //nextSong(true);
             start = true;
         }
         audioPlayer.play();
