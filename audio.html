@@ -5,14 +5,17 @@
     <link rel="stylesheet" type="text/css" href="audio.css">
 </head>
 <body>
-    <img id="playImage" src="Assets/playImage.png">
-    <img id="pauseImage" src="Assets/pauseImage.png" style="display: none;">
+    <div class = "audioUI">
+        
+        <img id="playImage" src="Assets/playImage.png">
+        <img id="pauseImage" src="Assets/pauseImage.png" style="display: none;">
 
-    <audio id="audioPlayer" loop>
-        <source src="Assets/Lost-and-Found.mp3" type="audio/mpeg">
-    
-</audio>
-
+        <audio id="audioPlayer" loop>
+            <source src="Assets/Tracks/Believe In Miracle.mp3" type="audio/mpeg">
+        
+        </audio>
+        <div id="currentFile">""</div>
+    </div>
     <script src="audio.js"></script>
 </body>
 </html>
