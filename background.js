@@ -3,3 +3,4 @@ chrome.runtime.onInstalled.addListener(() => {
         text: "OFF",
     });
 });
+

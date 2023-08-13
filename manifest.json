@@ -6,19 +6,18 @@
     "author": "Parathova, Wuzy, MicrophoneAle, Jaden Zhang",
 
     "background": {
-        "scripts": "background.js",
-        "persistent": false
-    },
+        "service_worker": "background.js"
+      },
 
     "icons":{
-        "32": "ExtensionIcon.png"
+        "32": "Assets/ExtensionIcon.png"
     },
 
-    "action": {
-        "default_icon" : "ExtensionIcon.png",
-        "default_popup": "popup.html",
-        "web_accessible_resources": ["uwuduck.png"],
-        "default_title": "le_app"
+
+    "browser_action": {
+        "default_popup": "window.html",
+        "default_icon": "Assets/ExtensionIcon.png"
+        
     },
     
     "permissions": ["activeTab"]
