@@ -49,17 +49,17 @@ body{
 }
 */
 
-.button
+.help
 { 
-    margin: 1rem;
+    margin: 1px;
     border: none;
     background-color: rgb(186, 178, 249);
     color: rgb(255, 255, 255);
     width: 70px;
     height: 30px;
     border-radius: 5px;
-    padding: .3rem;
-    font-size: 0.8rem;
+    padding: .3px;
+    font-size: 12px;
     font-family: Arial, Helvetica, sans-serif;
     
     /*background-color: #faf7ff;
@@ -79,11 +79,13 @@ body{
     transition-duration: 0.4s;*/
   }
   
-  .button:hover 
+  
+  .help:hover 
   {
     background-color: #8c6ebc;
     color: white;
   }
+  
   
   
   
