@@ -47,25 +47,22 @@ body{
 }
   
 .button
-{
-    position: fixed;
-    bottom: 10;
-    right: 40;  
+{ 
     background-color: #faf7ff;
     border: 2px solid #8c6ebc;
-    border-radius: 12px;
+    border-radius: 8px;
     color: #8c6ebc;
-    padding: 15px 32px;
+    padding: 5px;
     text-align: center;
     text-decoration: none;
-    font-family: Arial, Helvetica, sans-serif;
-    display: inline-block;
     font-size: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    display: inline-block;
     margin: 4px 2px;
     cursor: pointer;
+    width: 3%;
   }
-
-  
 
   .button {
     transition-duration: 0.4s;
