@@ -8,13 +8,16 @@
     "background": {
         "service worker": "background.js"
     },
+
     "icons":{
         "32": "ExtensionIcon.png"
     },
+
     "action": {
         "default_icon" : "ExtensionIcon.png",
         "default_popup": "popup.html",
         "default_title": "le_app"
     },
+    
     "permissions": ["activeTab"]
 }
