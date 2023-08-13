@@ -43,7 +43,7 @@ function focus(withReset = false) {
   setDisabled(focusBtn); //this isn't being executed for some reason 
   removeDisabled(restBtn);
   setTimerFocus();
-  console.log("ARE YOU BEING FUCKING CALLED FOCUS");
+  
 }
 
 function setTimerFocus() {
@@ -51,7 +51,7 @@ function setTimerFocus() {
   setCircleDasharray(); 
   withFocus=true;
   withRest=false;
-  console.log("ARE YOU BEING FUCKING CALLED SET TIMER FOCUS");
+  
 }
 
 function rest(withReset = false) {
@@ -79,7 +79,7 @@ function start(withReset = false ) { // start is false withReset
   if (withReset) {
     resetVars();
   }
-   if (withRest = true) { //its always true for some reason 
+   if (withRest == true) { //its always true for some reason NOW YOU WORK  
     startTimerRest();
     console.log("ARE YOU BEING FUCKING CALLED withRest = TrUE ");
   } else {
@@ -94,7 +94,7 @@ function startTimerFocus() {
     timeLabel.innerHTML = formatTime(timeLeft);
     setCircleDasharray();
 
-    if (timeLeft === 0) {
+    if (timeLeft === 0) { //update this legit never happens now what the fuck
       timeIsUp();
     } 
   }, 1000);
