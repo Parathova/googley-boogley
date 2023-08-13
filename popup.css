@@ -46,33 +46,35 @@ body{
     stroke-dasharray: 440;
 }
   
-#button .mentalSupport 
+.button
 {
     position: fixed;
     bottom: 10;
-    right: 25;  
+    right: 40;  
     background-color: #faf7ff;
     border: 2px solid #8c6ebc;
+    border-radius: 12px;
     color: #8c6ebc;
     padding: 15px 32px;
     text-align: center;
     text-decoration: none;
     font-family: Arial, Helvetica, sans-serif;
     display: inline-block;
-    font-size: 16px;
-    border-radius: 12px;
-    transition-duration: 0.4s;
-    
+    font-size: 10px;
+    margin: 4px 2px;
+    cursor: pointer;
   }
 
-  #button .mentalSupport {border-radius: 12px;}
+  
 
-  #button .mentalSupport {
+  .button {
     transition-duration: 0.4s;
   }
   
-  #button .mentalSupport:hover {
-    background-color: #6666d1;
+  
+  .button :hover 
+  {
+    background-color: #8c6ebc;
     color: white;
   }
   
