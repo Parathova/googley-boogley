@@ -276,6 +276,7 @@ function setCircleDasharray(TIME_LIMIT) {
   const circleDasharray = `${(
     calculateTimeFraction(TIME_LIMIT) * FULL_DASH_ARRAY
   ).toFixed(0)} 283`;
+  
   console.log("setCircleDashArray: ", circleDasharray);
   timer.setAttribute("stroke-dasharray", circleDasharray);
 }
