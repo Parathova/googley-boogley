@@ -5,9 +5,10 @@
     "manifest_version": 3,
     "author": "Parathova, Wuzy, MicrophoneAle, Jaden Zhang",
 
-    /*"background": {
-        "service worker": "background.js"
-    },*/
+    "background": {
+        "scripts": "background.js",
+        "persistent": false
+    },
 
     "icons":{
         "32": "ExtensionIcon.png"
@@ -17,7 +18,7 @@
         "default_icon" : "ExtensionIcon.png",
         "default_popup": "popup.html",
         "default_title": "le_app"
-    }
+    },
     
-    /*"permissions": ["activeTab"]*/
+    "permissions": ["activeTab"]
 }
