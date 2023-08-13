@@ -16,8 +16,7 @@ let timeLabel = document.getElementById("base-timer-label");
 const TIME_LIMIT_FOCUS = 1500; //in seconds
 const TIME_LIMIT_REST = 10;
 let timePassed = -1;
-let timeLeftFocus = TIME_LIMIT_FOCUS;
-let timeLeftRest = TIME_LIMIT_REST;
+let timeLeft = 0.0;
 let timerInterval = null;
 let withFocus= false;
 let withRest = false;
@@ -49,6 +48,18 @@ function focus(withReset = false) {
   removeDisabled(restBtn);
   setTimerFocus();
   
+
+
+}
+
+
+function rest(withReset = false) {
+  if (withReset) {
+    resetVarsRest();
+  }
+  setDisabled(restBtn);
+  removeDisabled(focusBtn);
+  setTimerRest();
 }
 
 function setTimerFocus() {
@@ -59,14 +70,7 @@ function setTimerFocus() {
   
 }
 
-function rest(withReset = false) {
-  if (withReset) {
-    resetVarsRest();
-  }
-  setDisabled(restBtn);
-  removeDisabled(focusBtn);
-  setTimerRest();
-}
+
 
 function setTimerRest(withReset = false) {
   if (withReset) {
@@ -220,9 +224,9 @@ function formatTime(time) {
 function calculateTimeFraction(TIME_LIMIT) {
   let rawTimeFraction = 0.0;
  if (TIME_LIMIT == TIME_LIMIT_FOCUS) {
-  rawTimeFraction = timeLeftFocus / TIME_LIMIT;
+  rawTimeFraction = timeLeft / TIME_LIMIT;
  } else {
-  rawTimeFraction = timeLeftRest / TIME_LIMIT;
+  rawTimeFraction = timeLeft/ TIME_LIMIT;
  }
   return rawTimeFraction - (1 / TIME_LIMIT) * (1 - rawTimeFraction);
 }
