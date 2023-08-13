@@ -67,10 +67,10 @@ body {
     border: none;
     background-color: rgb(186, 178, 249);
     color: rgb(255, 255, 255);
-    width: 150px;
-    height: 70px;
+    width: 200px;
+    height: 80px;
     border-radius: 20px;
-    padding: .3rem;
+    padding: .8rem;
     font-size: 1.1rem;
     box-sizing: border-box;
   }
