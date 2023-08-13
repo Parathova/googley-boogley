@@ -21,13 +21,14 @@ let timerInterval = null;
 let withFocus= false;
 let withRest = false;
 
-function reset() {
+function reset() { //called by reset button; resets the times according focus/rest, 
   clearInterval(timerInterval);
   if (withFocus == true ) {
    resetVarsFocus();
   } else {
     resetVarsRest();
   }
+
   startBtn.innerHTML = "Start";
   timer.setAttribute("stroke-dasharray", RESET_DASH_ARRAY);
   if (withFocus == true) {
@@ -41,6 +42,7 @@ function reset() {
 }
 
 function focus(withReset = false) {
+  console.log("focus was called");
   if (withReset) {
     resetVarsFocus();
   }
@@ -53,7 +55,7 @@ function focus(withReset = false) {
 }
 
 
-function rest(withReset = false) {
+function rest(withReset = true) {
   if (withReset) {
     resetVarsRest();
   }
@@ -62,7 +64,8 @@ function rest(withReset = false) {
   setTimerRest();
 }
 
-function setTimerFocus() {
+function setTimerFocus(withReset = true) {
+  if (withReset) resetVarsFocus();
   timeLabel.innerHTML = formatTime(TIME_LIMIT_FOCUS);
   setCircleDasharray(TIME_LIMIT_FOCUS); 
   withFocus=true;
@@ -76,6 +79,8 @@ function setTimerRest(withReset = false) {
   if (withReset) {
     resetVarsRest();
   }
+  timeLabel.innerHTML = formatTime(TIME_LIMIT_REST);
+  setCircleDasharray(TIME_LIMIT_REST); 
   withRest=true;
   withFocus=false;
 }
@@ -86,13 +91,15 @@ function start(withReset = false ) { // start is false withReset
   setDisabled(startBtn);
   removeDisabled(stopBtn);
   if (withReset) {
-    if (withFocus == true) {
+    if (withFocus ) {
     resetVarsFocus();
     } else {
       resetVarsRest();
     }
   }
-   if (withRest == true) { //its always true for some reason NOW YOU WORK  
+
+
+  if (withRest) { //its always true for some reason NOW YOU WORK  
     console.log("fuck");
     startTimerRest();
     console.log("ARE YOU BEING FUCKING CALLED withRest = TrUE ");
@@ -195,18 +202,20 @@ function timeIsUp() {
 function resetVarsFocus() {
   removeDisabled(startBtn);
   setDisabled(stopBtn);
+
   timePassed = -1;
   timeLeft = TIME_LIMIT_FOCUS;
-  console.log(timePassed, timeLeft);
+  console.log(timePassed + " " +  timeLeft + " reset vars focus");
   timeLabel.innerHTML = formatTime(TIME_LIMIT_FOCUS);
 }
 
-function resetVarsRest(TIME_LIMIT) {
+function resetVarsRest() {
   removeDisabled(startBtn);
   setDisabled(stopBtn);
+
   timePassed = -1;
   timeLeft = TIME_LIMIT_REST;
-  console.log(timePassed, timeLeft);
+  console.log(timePassed + " " +  timeLeft + " reset vars rest");
   timeLabel.innerHTML = formatTime(TIME_LIMIT_REST);
 }
 
