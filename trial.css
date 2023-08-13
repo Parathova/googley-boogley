@@ -67,15 +67,16 @@ body {
     border: none;
     background-color: rgb(186, 178, 249);
     color: rgb(255, 255, 255);
-    width: 100px;
-    height: 50px;
-    border-radius: 5px;
-    padding: .3rem;
+    width: 200px;
+    height: 80px;
+    border-radius: 20px;
+    padding: .8rem;
     font-size: 1.1rem;
+    box-sizing: border-box;
   }
   
   .buttons button:hover  {
-    background-color: rgb(205, 139, 192);
+    background-color: rgb(215, 188, 236);
     color: rgb(243, 235, 247);
   }
   
@@ -83,5 +84,5 @@ body {
     cursor: not-allowed;
   }
   .buttons button:disabled:hover {
-    background-color:rgb(215, 188, 236);
+    background-color:rgb(174, 147, 177);
   }
