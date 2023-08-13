@@ -23,8 +23,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
         audioPlayer.src = "Assets/Tracks/" + playlist[i];
         if(play) audioPlayer.play();
-        let a = 9 + playlist[i].length;
-        currentFileDisplay.textContent = `Playing: ${playlist[i]}`.substring(0, a-4);
+        let a = playlist[i].length;
+        currentFileDisplay.textContent = `${playlist[i]}`.substring(0, a-4);
         
         i = (i+1) % playlist.length;
         console.log("nextsong");
