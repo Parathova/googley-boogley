@@ -147,6 +147,7 @@ function stop() {
 
 
 window.addEventListener("load", () => {
+  focus();
   timeLabel.innerHTML = formatTime(TIME_LIMIT);
   //timeLabel.innerHTML = formatTime(TIME_LIMIT*0.5);
   setDisabled(stopBtn);
