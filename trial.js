@@ -19,34 +19,110 @@ let timePassed = -1;
 let timeLeftFocus = TIME_LIMIT_FOCUS;
 let timeLeftRest = TIME_LIMIT_REST;
 let timerInterval = null;
+let withFocus= false;
+let withRest = false;
 
 function reset() {
   clearInterval(timerInterval);
   resetVars();
   startBtn.innerHTML = "Start";
   timer.setAttribute("stroke-dasharray", RESET_DASH_ARRAY);
+  if (withFocus = true) {
+    timeLabel.innerHTML = formatTime(TIME_LIMIT_FOCUS);
+  } else if (withRest  = true) {
+    timeLabel.innerHTML = formatTime(TIME_LIMIT_REST);
+  }
+  withFocus= false;
+  withRest = false;
 }
 
 function focus(withReset = false) {
   if (withReset) {
     resetVars();
   }
+  setDisabled(focusBtn); //this isn't being executed for some reason 
+  removeDisabled(restBtn);
   setTimerFocus();
+  console.log("ARE YOU BEING FUCKING CALLED FOCUS");
 }
 
 function setTimerFocus() {
-    timeLabel.innerHTML = formatTime(timeLeftFocus);
-    setCircleDasharray(); 
+  timeLabel.innerHTML = formatTime(TIME_LIMIT_FOCUS);
+  setCircleDasharray(); 
+  withFocus=true;
+  withRest=false;
+  console.log("ARE YOU BEING FUCKING CALLED SET TIMER FOCUS");
 }
 
-function start(withReset = false) {
+function rest(withReset = false) {
+  if (withReset) {
+    resetVars();
+  }
+  setDisabled(restBtn);
+  removeDisabled(focusBtn);
+  setTimerRest();
+}
+
+function setTimerRest(withReset = false) {
+  if (withReset) {
+    resetVars();
+  }
+  withRest=true;
+  withFocus=false;
+}
+
+
+
+function start(withReset = false ) { // start is false withReset 
   setDisabled(startBtn);
   removeDisabled(stopBtn);
   if (withReset) {
     resetVars();
   }
-  startTimer();
+   if (withRest = true) { //its always true for some reason 
+    startTimerRest();
+    console.log("ARE YOU BEING FUCKING CALLED withRest = TrUE ");
+  } else {
+    startTimerFocus();
+  }
 }
+
+function startTimerFocus() {
+  timerInterval = setInterval(() => {
+    timePassed = timePassed += 1;
+    timeLeft = TIME_LIMIT_FOCUS - timePassed;
+    timeLabel.innerHTML = formatTime(timeLeft);
+    setCircleDasharray();
+
+    if (timeLeft === 0) {
+      timeIsUp();
+    } 
+  }, 1000);
+}
+
+function startTimerRest() {
+  timerInterval = setInterval(() => {
+    timePassed = timePassed += 1;
+    timeLeft = TIME_LIMIT_REST - timePassed;
+    timeLabel.innerHTML = formatTime(timeLeft);
+    setCircleDasharray();
+
+    if (timeLeft === 0) {
+      timeIsUp();
+    } 
+  }, 1000);
+}
+
+//function start(withReset = false ) { // start is false withReset 
+ // setDisabled(startBtn);
+ // removeDisabled(stopBtn);
+ // if (withReset) {
+//    resetVars();
+  //}
+ // if (withFocus = true){
+ // startTimerFocus();
+ // }
+//}
 
 function stop() {
   setDisabled(stopBtn);
@@ -55,18 +131,18 @@ function stop() {
   clearInterval(timerInterval);
 }
 
-function startTimer() {
-  timerInterval = setInterval(() => {
-    timePassed = timePassed += 1;
-    timeLeft = TIME_LIMIT - timePassed;
-    timeLabel.innerHTML = formatTime(timeLeft);
-    setCircleDasharray();
+//function startTimer() {
+ // timerInterval = setInterval(() => {
+  //  timePassed = timePassed += 1;
+ //  timeLeft = TIME_LIMIT - timePassed;
+  //  timeLabel.innerHTML = formatTime(timeLeft);
+  //  setCircleDasharray();
 
-    if (timeLeft === 0) {
-      timeIsUp();
-    }
-  }, 1000);
-}
+  //  if (timeLeft === 0) {
+      //timeIsUp();
+  //  }
+ // }, 1000);
+//}
 
 
 
@@ -93,12 +169,10 @@ function timeIsUp() {
   setDisabled(startBtn);
   removeDisabled(stopBtn);
   clearInterval(timerInterval);
-  let confirmReset = confirm("Time is UP! Wanna restart?");
+  let confirmReset = confirm("Your Timer's Finished! Reset?");
   if (confirmReset) {
     reset();
-    startTimer();
-  } else {
-    reset();
+    
   }
 }
 
