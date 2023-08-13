@@ -74,7 +74,7 @@ body {
     font-size: 1.1rem;
   }
   
-  .buttons button:hover {
+  .buttons button:hover  {
     background-color: rgb(205, 139, 192);
     color: rgb(243, 235, 247);
   }
@@ -82,6 +82,6 @@ body {
   .buttons button:disabled {
     cursor: not-allowed;
   }
-  .buttons button:disabled:hover{
+  .buttons button:disabled:hover {
     background-color:rgb(215, 188, 236);
   }

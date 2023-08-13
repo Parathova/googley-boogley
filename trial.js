@@ -62,6 +62,7 @@ function focus(withReset = false) {
   if (withReset) {
     resetVarsFocus();
   }
+  console.log("------------");
   setDisabled(focusBtn); //this isn't being executed for some reason 
   removeDisabled(restBtn);
   setTimerFocus();
