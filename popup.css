@@ -14,6 +14,7 @@ body{
 
 }
 
+/*
 #time
 {
     display: flex;
@@ -45,10 +46,22 @@ body{
     stroke: var(--clr);
     stroke-dasharray: 440;
 }
-  
+*/
+
 .button
 { 
-    background-color: #faf7ff;
+    margin: 1rem;
+    border: none;
+    background-color: rgb(186, 178, 249);
+    color: rgb(255, 255, 255);
+    width: 70px;
+    height: 30px;
+    border-radius: 5px;
+    padding: .3rem;
+    font-size: 0.8rem;
+    font-family: Arial, Helvetica, sans-serif;
+    
+    /*background-color: #faf7ff;
     border: 2px solid #8c6ebc;
     border-radius: 8px;
     color: #8c6ebc;
@@ -61,15 +74,11 @@ body{
     display: inline-block;
     margin: 4px 2px;
     cursor: pointer;
-    width: 3%;
-  }
-
-  .button {
-    transition-duration: 0.4s;
+    width: 40px;
+    transition-duration: 0.4s;*/
   }
   
-  
-  .button :hover 
+  .button:hover 
   {
     background-color: #8c6ebc;
     color: white;
