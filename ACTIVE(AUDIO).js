@@ -28,6 +28,7 @@ document.addEventListener('DOMContentLoaded', function() {
         "Sleepy Cat.mp3",
         "Motivated To Create.mp3",
         "Wish You Were Here.mp3",
+        "BeethovenSymphony9Mvt4.mp3"
     ]
 
     let i = 0;
