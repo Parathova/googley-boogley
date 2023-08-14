@@ -49,7 +49,7 @@ body{
 }
 */
 
-.help
+#help
 { 
     margin: 1px;
     border: none;
@@ -80,7 +80,7 @@ body{
   }
   
   
-  .help:hover 
+  #help:hover 
   {
     background-color: #8c6ebc;
     color: white;
