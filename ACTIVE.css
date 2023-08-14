@@ -234,6 +234,32 @@ img
     background-color:rgb(174, 147, 177);
   }
 
+  /* for CheerMeUP */
+  #help
+  { 
+      text-align: center;
+      position: absolute;
+      font-family: "Akshar", Arial, Helvetica, sans-serif;
+      margin: 1px;
+      border: none;
+      background-color: rgb(186, 178, 249);
+      color: rgb(255, 255, 255);
+      width: 80px;
+      height: 30px;
+      border-radius: 5px;
+      padding: .3px;
+      font-size: 12px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    
+    
+    #help:hover 
+    {
+      background-color: #8c6ebc;
+      color: white;
+    }
 
   #currentFile
 {
