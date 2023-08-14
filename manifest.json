@@ -21,7 +21,7 @@
 
     "web_accessible_resources": [
         {
-            "resources": ["uwuduck.png", "hedge.png", "dog.png", "hang.png", "tennis.png"],
+            "resources": ["uwuduck.png", "hedge.png", "dog.png", "hang.png", "tennis.png", "redpanda.png", "duck.png", "giraffe.png"],
             "matches": ["https://*/*"]
         }
     ],
