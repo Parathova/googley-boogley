@@ -10,7 +10,7 @@
 * {
     box-sizing: border-box;
     margin: 0;
-    font-family: "Fira sans", sans-seif;
+    font-family: 'Fira sans', sans-seif;
 }
 body{
     display: flex;
