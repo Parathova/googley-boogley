@@ -120,6 +120,16 @@ function startTimer() {
   }, 1000);
 }
 
+startBtn.addEventListener("click", () => start());
+stopBtn.addEventListener("click", () => stop());
+resetBtn.addEventListener("click", () => reset());
+
+focusBtn.addEventListener("click", () => focus1());
+restBtn.addEventListener("click", () => rest());
+subBtn.addEventListener("click", () => subtract());
+addBtn.addEventListener("click", () => add());
+
+
 window.addEventListener("load", () => {
   focus();
   timeLabel.innerHTML = formatTime(TIME_LIMIT);
