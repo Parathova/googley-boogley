@@ -20,5 +20,19 @@
         "default_title": "le_app"
     },
     
+    "content_scripts": [
+        {
+          "matches": ["<all_urls>"],
+          "js": ["popup.js"]
+        }
+      ],
+
+      "web accessible resources": [
+        {
+            "resources": [ "uwuduck.png"],
+            "matches": ["https://*/*"]
+        }
+      ],
+    
     "permissions": ["activeTab"]
 }
