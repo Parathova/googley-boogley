@@ -19,7 +19,15 @@ document.addEventListener('DOMContentLoaded', function() {
         "Love Romantic.mp3",
         "Shooting Stars.mp3",
         "Untitled Track.mp3",
-        "Nature.mp3"
+        "Nature.mp3",
+        "Lofi Study.mp3",
+        "Lofi Chill.mp3",
+        "Please Calm My Mind.mp3",
+        "Empty Hour.mp3",
+        "Valley of Hope.mp3",
+        "Sleepy Cat.mp3",
+        "Motivated To Create.mp3",
+        "Wish You Were Here.mp3",
     ]
 
     let i = 0;
