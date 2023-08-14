@@ -27,7 +27,7 @@ body{
     width: 480px;
     max-width: 480px;
     height: 1000px;
-    max-height: 1000px;
+    max-height: 3000px;
     font-family: "Akshar", Arial, Helvetica, sans-serif;;
     
     padding: 0px;
@@ -48,7 +48,7 @@ body{
 }
 header{
     padding: 1rem 2rem;
-    max-width: 500px;
+    max-width: 1000px;
     width: 100%;
     margin: 0 auto; 
 }
