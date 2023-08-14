@@ -13,6 +13,7 @@ chrome.runtime.onMessage.addListener(function(message, sender, sendResponse) {
       overlay.style.width = "100%";
       overlay.style.height = "100%";
       overlay.style.backgroundColor = "rgba(0, 0, 0, 0)";
+      
       const image = document.createElement("img");
       image.src = chrome.runtime.getURL(messages[randomNum]);
       image.style.maxWidth = "80%";
