@@ -20,12 +20,22 @@
         "default_title": "le_app"
     },
 
-      "web accessible resources": [
+    "web_accessible_resources": [
         {
-            "resources": [ "uwuduck.png"],
-            "matches": ["https://*/*"]
+            "resources": ["uwuduck.png"],
+            "matches": ["*://*/*"]
         }
-      ],
+    ],
+
+    "content_scripts": [
+        {
+            "matches": ["https://*/*"],
+            "js": ["content_script.js"]
+        }
+    ],
     
-    "permissions": ["activeTab"]
+    "permissions": [
+        "tabs",
+        "activeTab"
+    ]
 }
