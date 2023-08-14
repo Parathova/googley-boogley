@@ -10,6 +10,8 @@ let restBtn = document.querySelector(".rest"); //new
 let addBtn = document.querySelector(".add");
 let subBtn = document.querySelector(".subtract");
 
+let todoBtn = document.querySelector(".todo");
+
 const audioPlayer = document.getElementById('audioRingPlayer');
 
 
@@ -130,6 +132,18 @@ focusBtn.addEventListener("click", () => focus1());
 restBtn.addEventListener("click", () => rest());
 subBtn.addEventListener("click", () => subtract());
 addBtn.addEventListener("click", () => add());
+
+todoBtn.addEventListener("click", () => {
+  chrome.windows.create({ 
+        
+    url: chrome.runtime.getURL("todo.html"), 
+    type: "popup" ,
+    width: 320,
+    height: 490
+
+
+});
+});
 
 
 window.addEventListener("load", () => {
