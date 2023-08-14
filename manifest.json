@@ -3,7 +3,7 @@
     "version": "1.0.0",
     "description": "This is an extension to help remind users to take mental health breaks and other healthy stuff",
     "manifest_version": 3,
-    "author": "Parathova, Wuzy, MicrophoneAle, Jaden Zhang",
+    "author": "Lemon.EXE, Parathova, MicrophoneAle, Watson",
 
     "background": {
         "service_worker": "background.js"
@@ -15,7 +15,7 @@
 
     "action": {
         "default_icon" : "ExtensionIcon.png",
-        "default_popup": "popup.html",
+        "default_popup": "ACTIVE.html",
         "default_title": "le_app"
     },
 

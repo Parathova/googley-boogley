@@ -2,7 +2,7 @@
 document.getElementById("help").addEventListener("click", help);
 
 async function help () {
-    document.getElementById("help").style.backgroundColor= '#911';
+    //document.getElementById("help").style.backgroundColor= '#D9CFE1';
     
     const [tab] = await chrome.tabs.query({ active: true, currentWindow: true });
     const response = await chrome.tabs.sendMessage(tab.id, {action: "showDuck"});
