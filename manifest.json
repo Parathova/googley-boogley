@@ -19,13 +19,6 @@
         "web_accessible_resources": ["uwuduck.png"],
         "default_title": "le_app"
     },
-    
-    "content_scripts": [
-        {
-          "matches": ["<all_urls>"],
-          "js": ["popup.js"]
-        }
-      ],
 
       "web accessible resources": [
         {
