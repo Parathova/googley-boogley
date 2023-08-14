@@ -21,7 +21,7 @@ const restTime = 300;
 
 let TIME_LIMIT = 1500; //in seconds
 
-let timePassed = -1;
+let timePassed = 0;
 let timeLeft = TIME_LIMIT;
 let timerInterval = null;
 let started = false; //keeps track of if the timer is running or not

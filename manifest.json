@@ -15,7 +15,7 @@
 
     "action": {
         "default_icon" : "ExtensionIcon.png",
-        "default_popup": "popup.html",
+        "default_popup": "ACTIVE.html",
         "web_accessible_resources": ["uwuduck.png"],
         "default_title": "le_app"
     },
