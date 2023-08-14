@@ -1,3 +1,16 @@
+
+
+
+chrome.action.onClicked.addListener(() => {
+    console.log("this one")
+    chrome.windows.create({
+      type: 'popup',
+      url: 'audio.html',
+      width: 300,
+      height: 450
+    });
+  });
+
 document.addEventListener('DOMContentLoaded', function() {
     const playImage = document.getElementById('playImage');
     const pauseImage = document.getElementById('pauseImage');
@@ -22,7 +35,10 @@ document.addEventListener('DOMContentLoaded', function() {
     function nextSong(play=true){
 
         audioPlayer.src = "Assets/Tracks/" + playlist[i];
-        if(play) audioPlayer.play();
+        if(play) {
+            audioPlayer.play();
+            chrome.runtime.sendMessage({ action: 'playMusic' });
+        }
         let a = playlist[i].length;
         currentFileDisplay.textContent = `${playlist[i]}`.substring(0, a-4);
         
@@ -37,6 +53,7 @@ document.addEventListener('DOMContentLoaded', function() {
     playImage.addEventListener('click', function() {
        
         audioPlayer.play();
+        chrome.runtime.sendMessage({ action: 'playMusic' });
         playImage.style.display = 'none';   // Hide play image
         pauseImage.style.display = 'block'; // Show pause image
         if(!start){
