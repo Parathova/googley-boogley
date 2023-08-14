@@ -49,6 +49,7 @@ body{
 
 header{
     padding: 1rem 2rem;
+    padding-top: 4rem;
     max-width: 1000px;
     width: 100%;
     margin: 0 auto; 
@@ -106,6 +107,7 @@ input, button{
 main{
     flex: 1 1 0%;
     padding: 2rem 1rem;
+    padding-top: 0px;
     max-width: 500px;
     width: 100%;
     margin: 0 auto;
