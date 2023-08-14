@@ -18,7 +18,7 @@
     --graymagenta: #7a6a74;
 }
 * {
-    box-sizing: border-box;
+    box-sizing: border-box; 
     margin: 0;
     p{font-family: "Akshar", Arial, Helvetica, sans-serif;}
     
