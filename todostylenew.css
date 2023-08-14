@@ -31,9 +31,6 @@ body{
     flex-direction: column;
     align-items: center;
     
-
-    
-
     margin: 0px;
     margin-top: 10px;
     background-image: url("Assets/background(more_pixel)(larger).png");
@@ -41,8 +38,6 @@ body{
     background-size: 500px;
     background-repeat: no-repeat;
     height: 100%;
-    
-
     justify-items: center;
 }
 header{
