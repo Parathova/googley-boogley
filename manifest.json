@@ -15,15 +15,14 @@
 
     "action": {
         "default_icon" : "ExtensionIcon.png",
-        "default_popup": "ACTIVE.html",
-        "web_accessible_resources": ["uwuduck.png"],
+        "default_popup": "popup.html",
         "default_title": "le_app"
     },
 
     "web_accessible_resources": [
         {
-            "resources": ["uwuduck.png"],
-            "matches": ["*://*/*"]
+            "resources": ["uwuduck.png", "hedge.png", "dog.png", "hang.png", "tennis.png"],
+            "matches": ["https://*/*"]
         }
     ],
 
