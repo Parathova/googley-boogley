@@ -5,8 +5,8 @@ chrome.browserAction.onClicked.addListener(function(activeTab)
         
         url: chrome.runtime.getURL("todo.html"), 
         type: "popup" ,
-        width: 320,
-        height: 490
+        width: 510,
+        height: 800
 
     
     });
