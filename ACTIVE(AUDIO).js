@@ -19,7 +19,8 @@ document.addEventListener('DOMContentLoaded', function() {
         "Love Romantic.mp3",
         "Shooting Stars.mp3",
         "Untitled Track.mp3",
-        "Nature.mp3"
+        "Nature.mp3",
+        "BeethovenSymphony9Mvt4.mp3"
     ]
 
     let i = 0;
