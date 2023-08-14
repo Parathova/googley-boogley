@@ -1,3 +1,7 @@
+@font-face {
+    font-family: Akshar;
+    src: url(Assets/Fonts/Akshar-Medium.ttf) format("truetype");
+}
 :root{
     --dark: #374151;
     --darker: #1f2937;
@@ -21,8 +25,10 @@
 }
 body{
     width: 480px;
+    max-width: 480px;
     height: 1000px;
-    font-family: Arial, sans-serif;
+    max-height: 1000px;
+    font-family: "Akshar", Arial, Helvetica, sans-serif;;
     
     padding: 0px;
     padding-top: 50px;
@@ -41,7 +47,7 @@ body{
     justify-items: center;
 }
 header{
-    padding: 2rem 1rem;
+    padding: 2rem 2rem;
     max-width: 500px;
     width: 100%;
     margin: 0 auto; 
@@ -68,6 +74,7 @@ input, button{
 }
 #new-task-input{
     flex: 1 1 0%;
+    font-family: "Akshar", Arial, Helvetica, sans-serif;
     background-color: var(--darker);
     padding: 1rem;
     border-radius: 1rem;
@@ -82,6 +89,7 @@ input, button{
     color: var(--pink);
     font-size: 1.5rem;
     font-weight: 700;
+    font-family: "Akshar", Arial, Helvetica, sans-serif;
     background-image: linear-gradient(to right, var(--pink), var(--purple));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -113,6 +121,7 @@ main{
 #tasks .task {
     display: flex;
     justify-content: space-between;
+    font-family: "Akshar", Arial, Helvetica, sans-serif;
     background-color: var(--darkest);
     padding: 1rem;
     border-radius: 1rem;
@@ -123,6 +132,7 @@ main{
 }
 
 .task .content .text {
+    font-family: "Akshar", Arial, Helvetica, sans-serif;
 	color: var(--light);
 	font-size: 1.125rem;
 	width: 100%;
@@ -157,11 +167,13 @@ main{
 }
 
 .task .actions .edit {
+    font-family: "Akshar", Arial, Helvetica, sans-serif;
 	background-image: linear-gradient(to right, var(--pink), var(--purple));
 	-webkit-background-clip: text;
 	-webkit-text-fill-color: transparent;
 }
 
 .task .actions .delete {
+    font-family: "Akshar", Arial, Helvetica, sans-serif;
 	color: var(--pink);
 }
