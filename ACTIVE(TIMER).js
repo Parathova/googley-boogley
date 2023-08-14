@@ -1,4 +1,3 @@
-
 const FULL_DASH_ARRAY = 283;
 const RESET_DASH_ARRAY = `-57 ${FULL_DASH_ARRAY}`;
 
@@ -20,7 +19,7 @@ let timeLabel = document.getElementById("base-timer-label");
 
 //Time related vars
 const focusTime = 1500;
-const restTime = 3;
+const restTime = 300;
 
 let TIME_LIMIT = 1500; //in seconds
 
