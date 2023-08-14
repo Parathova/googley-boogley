@@ -11,13 +11,16 @@ let restBtn = document.querySelector(".rest"); //new
 let addBtn = document.querySelector(".add");
 let subBtn = document.querySelector(".subtract");
 
+const audioPlayer = document.getElementById('audioRingPlayer');
+
+
 //DOM elements
 let timer = document.querySelector("#base-timer-path-remaining");
 let timeLabel = document.getElementById("base-timer-label");
 
 //Time related vars
 const focusTime = 1500;
-const restTime = 300;
+const restTime = 3;
 
 let TIME_LIMIT = 1500; //in seconds
 
@@ -154,8 +157,14 @@ function timeIsUp() {
 
   setDisabled(startBtn);
   removeDisabled(stopBtn);
+
+  audioPlayer.play();
+
+
   clearInterval(timerInterval);
   let confirmReset = confirm("Time is UP! Wanna restart?");
+  audioPlayer.play();
+
   if (confirmReset) {
     reset();
     startTimer();
