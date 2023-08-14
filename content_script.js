@@ -1,5 +1,5 @@
 
-var messages = new Array ("uwuduck.png", "hedge.png", "dog.png", "hang.png", "tennis.png");
+var messages = new Array ("uwuduck.png", "hedge.png", "dog.png", "hang.png", "tennis.png", "redpanda.png", "duck.png", "giraffe.png");
 var randomNum = Math.floor(Math.random() * messages.length);
 
 
