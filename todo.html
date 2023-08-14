@@ -8,6 +8,13 @@
     <link rel="stylesheet" href= "todostylenew.css">
 </head>
 <body>
+    <button onclick="openWin()">New window</button>
+    <script>
+        var window;
+        function openWin() {
+            window = window.open("", "", "width= 500, height= 1000");
+        }
+    </script>
     <header>
         <h1>Your Healthy To-Do List</h1>
         <form id = "new-task-form">
