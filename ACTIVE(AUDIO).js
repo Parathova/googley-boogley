@@ -1,9 +1,14 @@
+
+
+
+
 document.addEventListener('DOMContentLoaded', function() {
     const playImage = document.getElementById('playImage');
     const pauseImage = document.getElementById('pauseImage');
     const audioPlayer = document.getElementById('audioPlayer');
     const currentFileDisplay = document.getElementById("currentFile");
     const playlist = [
+        /*"Record (online-voice-recorder.com).mp3",*/
         "Believe in Miracle.mp3",
         "Close Study.mp3",
         "Coding Night.mp3",
@@ -22,7 +27,10 @@ document.addEventListener('DOMContentLoaded', function() {
     function nextSong(play=true){
 
         audioPlayer.src = "Assets/Tracks/" + playlist[i];
-        if(play) audioPlayer.play();
+        if(play) {
+            audioPlayer.play();
+            /*chrome.runtime.sendMessage({ action: 'playMusic' });*/
+        }
         let a = playlist[i].length;
         currentFileDisplay.textContent = `${playlist[i]}`.substring(0, a-4);
         
@@ -37,6 +45,7 @@ document.addEventListener('DOMContentLoaded', function() {
     playImage.addEventListener('click', function() {
        
         audioPlayer.play();
+        /*chrome.runtime.sendMessage({ action: 'playMusic' });*/
         playImage.style.display = 'none';   // Hide play image
         pauseImage.style.display = 'block'; // Show pause image
         if(!start){
@@ -49,6 +58,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     pauseImage.addEventListener('click', function() {
+        console.log("paused");
         audioPlayer.pause();
         playImage.style.display = 'block';  // Show play image
         pauseImage.style.display = 'none';  // Hide pause image

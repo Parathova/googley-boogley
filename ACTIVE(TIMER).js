@@ -21,7 +21,7 @@ const restTime = 300;
 
 let TIME_LIMIT = 1500; //in seconds
 
-let timePassed = -1;
+let timePassed = 0;
 let timeLeft = TIME_LIMIT;
 let timerInterval = null;
 let started = false; //keeps track of if the timer is running or not
@@ -119,6 +119,16 @@ function startTimer() {
     }
   }, 1000);
 }
+
+startBtn.addEventListener("click", () => start());
+stopBtn.addEventListener("click", () => stop());
+resetBtn.addEventListener("click", () => reset());
+
+focusBtn.addEventListener("click", () => focus1());
+restBtn.addEventListener("click", () => rest());
+subBtn.addEventListener("click", () => subtract());
+addBtn.addEventListener("click", () => add());
+
 
 window.addEventListener("load", () => {
   focus();
