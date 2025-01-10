@@ -1,12 +1,13 @@
 # googley
 
-This is a functioning study aid Chrome extension created by:   
+**This is a functioning study aid Chrome extension created by:   **
 Joyce Wu  
 Jaden Zhang  
 Michael Liu  
 Parto Tolouashtiany   
 
-**Created with:**
+**Created with:**  
+
 chrome-extension-api  
 
 css  
